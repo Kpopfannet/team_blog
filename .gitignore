@@ -15,3 +15,5 @@
 /log/*
 !/log/.keep
 /tmp
+public/.DS_Store
+public/external/.DS_Store
