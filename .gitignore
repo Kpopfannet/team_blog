@@ -17,3 +17,6 @@
 /tmp
 public/.DS_Store
 public/external/.DS_Store
+
+# This paragraph is added by Seoha
+/config/database.yml
