@@ -14,16 +14,12 @@ default: &default
 
 development:
   <<: *default
-  password: Fannet1q2w3e!
+  password: ""
   database: fannetDB_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  password: Fannet1q2w3e!
-  database: fannetDB_test
 
 production:
   <<: *default
