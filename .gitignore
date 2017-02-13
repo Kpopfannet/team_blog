@@ -13,11 +13,15 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
+/tmp/*
 !/log/.keep
-/tmp
-public/.DS_Store
-public/external/.DS_Store
+!/tmp/.keep
 
-# This paragraph is added by Seoha
+# Ignore Byebug command history file.
+.byebug_history
+
+# we add this
+*/.DS_Store
+*/.idea/.
 config/database.yml
 db/schema.rb

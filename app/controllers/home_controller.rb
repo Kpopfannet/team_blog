@@ -1,6 +1,4 @@
 class HomeController < ApplicationController
-    def index
-        
-        # render_404
-    end
+  def index
+  end
 end

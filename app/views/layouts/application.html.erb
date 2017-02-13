@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>TeamBlog</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= stylesheet_link_tag    params[:controller] %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-
-    <!-- bootstrap CDN -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    params[:controller] %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -17,16 +15,14 @@
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/content.css">
-</head>
-<body>
-<div class="row" style="padding: 0; height: 100%; margin: 0;">
-    <!--frame of navbar is constant-->
-    <%= render partial: 'home/part/navbar', layout: false %>
+  </head>
 
-    <!--contents codes are yield-->
-    <div class="height-match_parent content_wrapper default_background"> 
-        <%= yield %>
-    </div>
-</div>
-</body>
+  <body>
+      <div class="row" style="padding: 0; height: 100%; margin: 0;">
+          <%= render partial: 'home/part/navbar', layout: false %>
+          <div class="height-match_parent content_wrapper default_background">
+              <%= yield %>
+          </div>
+      </div>
+  </body>
 </html>
