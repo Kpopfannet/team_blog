@@ -1,0 +1,10 @@
+/* contents style */
+.content_wrapper{
+    width: 79%;
+    margin-left: 21%;
+    padding: 0% !important;
+}
+
+.default_background{
+    background: #f5f5f5;
+}
