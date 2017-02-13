@@ -3,7 +3,7 @@
 <head>
     <title>TeamBlog</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= stylesheet_link_tag    params[:controller]%>
+    <%= stylesheet_link_tag    params[:controller] %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
@@ -21,7 +21,7 @@
 <body>
 <div class="row" style="padding: 0; height: 100%; margin: 0;">
     <!--frame of navbar is constant-->
-    <%= render partial: 'home/part/navbar', layout: false%>
+    <%= render partial: 'home/part/navbar', layout: false %>
 
     <!--contents codes are yield-->
     <%= yield %>
