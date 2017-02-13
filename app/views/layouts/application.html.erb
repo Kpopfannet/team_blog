@@ -24,7 +24,9 @@
     <%= render partial: 'home/part/navbar', layout: false %>
 
     <!--contents codes are yield-->
-    <%= yield %>
+    <div class="height-match_parent content_wrapper default_background"> 
+        <%= yield %>
+    </div>
 </div>
 </body>
 </html>
