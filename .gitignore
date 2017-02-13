@@ -16,10 +16,10 @@
 !/log/.keep
 /tmp
 
+# Added line
 */schema.rb
 /config/database.yml
-
 # Ignore Mac System files
 .idea/*
 */.keep
-
+**/.DS_Store
