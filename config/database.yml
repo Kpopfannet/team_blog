@@ -14,7 +14,7 @@ default: &default
 
 development:
   <<: *default
-  password: Fannet1q2w3e!
+  password: ""
   database: fannetDB_dev
 
 # Warning: The database defined as "test" will be erased and
