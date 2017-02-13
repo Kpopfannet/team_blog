@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TeamBlog</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    params[:controller] %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+      <title>TeamBlog</title>
+      <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= stylesheet_link_tag    params[:controller] %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="/external/jquery/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/content.css">
+      <link rel="stylesheet" href="/external/jquery/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+      <link rel="stylesheet" href="/css/layout.css">
+      <link rel="stylesheet" href="/css/navbar.css">
+      <link rel="stylesheet" href="/css/footer.css">
+      <link rel="stylesheet" href="/css/content.css">
   </head>
 
-  <body>
+  <body class="default_background">
       <div class="row" style="padding: 0; height: 100%; margin: 0;">
           <%= render partial: 'home/part/navbar', layout: false %>
-          <div class="height-match_parent content_wrapper default_background">
+          <div class="height-match_parent content_wrapper">
               <%= yield %>
           </div>
       </div>
