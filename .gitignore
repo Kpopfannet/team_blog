@@ -16,5 +16,10 @@
 !/log/.keep
 /tmp
 
-./db/schema.rb
-./config/database.yml
+*/schema.rb
+/config/database.yml
+
+# Ignore Mac System files
+.idea/*
+*/.keep
+
