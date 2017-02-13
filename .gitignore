@@ -14,10 +14,12 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
+
+# This paragraph is added by Dogki
 /tmp
-public/.DS_Store
-public/external/.DS_Store
+.DS_Store*
+.idea/*
 
 # This paragraph is added by Seoha
 config/database.yml
-db/schema.rb
+/db/schema.rb*
