@@ -1,0 +1,23 @@
+.k_button{
+	&.f{
+		position:fixed;
+	}
+	&.c{
+		transform: translateX(-50%);
+		left:50%;
+		bottom:50px;
+	}
+	.body{
+		width:100px;
+		height:50px;
+		text-align: center;
+		padding-top:10px;
+		&.r{
+			border-radius: 20px;
+		}
+		.text{
+			font-size:20px;
+			font-weight: 900;
+		}
+	}
+}

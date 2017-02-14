@@ -1,25 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Blogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<h1>밥 기록실</h1>
 <br>
+<% @blogs.each do |blog| %>
+    <div class="row k_padding h">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="k_padding h v white col-md-7">
+                    <%==blog.content%>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="k_padding h v white col-md-4">
+                    <%= link_to 'Edit', edit_blog_path(blog) %>
+                    <br>
+                    <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+            </div>
+        </div>
+    </div>   
+<% end %>
 
-<%= link_to 'New Blog', new_blog_path %>
+
+<%=link_to("/blogs/new", {class: "k_button f c"}) do%>
+    <div class="body r naver_color">
+        <p class="text" style="color:white">New 밥</p>
+    </div>
+<%end%>
