@@ -1,15 +1,10 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:edit, :update, :destroy]
 
   # GET /blogs
   # GET /blogs.json
   def index
     @blogs = Blog.all
-  end
-
-  # GET /blogs/1
-  # GET /blogs/1.json
-  def show
   end
 
   # GET /blogs/new
@@ -28,11 +23,9 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render :show, status: :created, location: @blog }
+        format.html { redirect_to "/blogs", notice: 'Blog was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,6 +62,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.fetch(:blog, {})
+      params.fetch(:blog, {}).permit(:content)
     end
 end
