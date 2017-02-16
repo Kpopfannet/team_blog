@@ -28,6 +28,10 @@
     font-family: 'Roboto', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
+.main-menu > li > a{
+    padding-left: 20px;
+}
+
 .hover-no_effect {
     text-decoration: none !important;
     background-color: #fff !important;
@@ -41,6 +45,7 @@
 .main-menu{
     width: 100%;
     padding-top: 10px;
+    /*padding-left: 20px;*/
 }
 
 .nav, .nav > li {

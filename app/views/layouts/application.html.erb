@@ -17,4 +17,12 @@
             </div>
         </div>
     </body>
+
+    <script>
+        <%@scripts = [] if defined?(@scripts)==nil%>
+        <%@scripts.each do |script|%>
+            <%==script%>
+        <%end%>
+    </script>
+
 </html>

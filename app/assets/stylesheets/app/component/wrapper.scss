@@ -1,11 +1,13 @@
-.k_padding{
+.Kpadding{
+	position: relative;
 	padding: 0px 0px 0px 0px;
 	&.pr{padding-right: 15px}
 	&.pl{padding-left: 15px}
 	&.pu{padding-top: 15px}
 	&.pd{padding-bottom: 15px}
 }
-.k_margin{
+.Kmargin{
+	position: relative;
 	margin: 0px 0px 0px 0px;
 	&.mr{margin-right: 15px}
 	&.ml{margin-left: 15px}
