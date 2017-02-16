@@ -2,6 +2,9 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:edit, :update, :destroy]
 
   def index
+    @scripts=[
+      "square('.Jimage_box')"
+    ]
     @blogs = Blog.all
   end
 
@@ -46,6 +49,6 @@ class BlogsController < ApplicationController
     end
 
     def blog_params
-      params.fetch(:blog, {}).permit(:content)
+      params.fetch(:blog, {}).permit(:content, :photo)
     end
 end

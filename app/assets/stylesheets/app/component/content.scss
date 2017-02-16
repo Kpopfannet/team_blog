@@ -1,7 +1,15 @@
-.content{
+.Kcontent{
 	position: absolute;
 	&.cc{
 		left: 50%;
 		transform: translateX(-50%);
+	}
+	&.ccc{
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&.img{
+		width: 100%;
 	}
 }
