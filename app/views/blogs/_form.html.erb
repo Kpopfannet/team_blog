@@ -1,32 +1,24 @@
 <%= form_for(blog) do |f| %>
-    <% if blog.errors.any? %>
-        <div id="error_explanation">
-            <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
-            <% blog.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-        </div>
-    <% end %>
+    <div class="row k_margin mu md"></div>
 
-    <div class="row k_padding h">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-7">
-                    <%= f.text_area :content, class: "tinymce_area"%>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="k_padding h v col-md-4">
-                    사진등록
-                </div>
+    <div class="row k_padding pr pl">
+        <div class="col-md-7 k_padding">
+            <%= f.text_area :content, class: "tinymce_area"%>
+        </div>
+
+        <div class="col-md-1 half"></div>
+            <div class="col-md-2 k_padding pr pl pu pd">
+                <button class="btn btn-info btn-icon"><i class="zmdi zmdi-search"></i></button>
+                <p>사진등록</p>
             </div>
         </div>
-    </div>   
+    </div>  
+    
+    <div class="row k_margin mu md"></div>  
 
-    <%= f.button("", {class: "k_button f c"}) do%>
+    <%= f.button({class: "blogs_button f c"}) do%>
         <div class="body r kakao_color">
             <p class="text">밥 등록</p>
         </div>
     <%end%>
-
 <% end %>
-

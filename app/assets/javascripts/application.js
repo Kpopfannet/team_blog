@@ -16,8 +16,6 @@
 // require turbolinks
 // require_tree .
 
-
-
 //= require_tree ./plugin/external
 //= require ./plugin/tinymce/js/tinymce/tinymce.min.js
 //= require_tree ./app

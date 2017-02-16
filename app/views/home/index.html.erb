@@ -1,52 +1,65 @@
-<h1>HOME</h1>
-<div class="mini-charts">
-    <div class="row">
-        <div class="col-sm-6 col-md-3">
-            <div class="mini-charts-item bgm-cyan">
-                <div class="clearfix">
-                    <div class="chart stats-bar"></div>
-                    <div class="count">
-                        <small>업무중 직원수</small>
-                        <h2>4명</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-sm-6 col-md-3">
-            <div class="mini-charts-item bgm-lightgreen">
-                <div class="clearfix">
-                    <div class="chart stats-bar-2"></div>
-                    <div class="count">
-                        <small>방문자 수</small>
-                        <h2>289</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-sm-6 col-md-3">
-            <div class="mini-charts-item bgm-orange">
-                <div class="clearfix">
-                    <div class="chart stats-line"></div>
-                    <div class="count">
-                        <small>능률</small>
-                        <h2>78%</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-sm-6 col-md-3">
-            <div class="mini-charts-item bgm-bluegray">
-                <div class="clearfix">
-                    <div class="chart stats-line-2"></div>
-                    <div class="count">
-                        <small>진행도</small>
-                        <h2>30%</h2>
-                    </div>
-                </div>
-            </div>
+<div class="row col-md-12 k_padding pu pd pr pl">
+    <h1>Today's Duty</h1>
+</div>   
+<div class="row k_padding pr pl">
+    <div class="col-md-3 k_padding">
+        <div class="dash-widget-item bgm-lime" style="height:390px">
+            <h1 class="content cc" style="top:150px"><%=@duty[:Name]%></h1>
         </div>
     </div>
+    <div class="col-md-4">
+        <div class="mini-charts">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mini-charts-item bgm-cyan">
+                        <div class="clearfix">
+                            <div class="chart stats-bar"></div>
+                            <div class="count">
+                                <small>Main Role</small>
+                                <h2><%=@duty[:Main_Role]%></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="mini-charts-item bgm-lightgreen">
+                        <div class="clearfix">
+                            <div class="chart stats-bar-2"></div>
+                            <div class="count">
+                                <small>당번 일 1</small>
+                                <h2>아침 사와라</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="mini-charts-item bgm-orange">
+                        <div class="clearfix">
+                            <div class="chart stats-line"></div>
+                            <div class="count">
+                                <small>당번 일 2</small>
+                                <h2>청소 틈틈히 해</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="mini-charts-item bgm-bluegray">
+                        <div class="clearfix">
+                            <div class="chart stats-line-2"></div>
+                            <div class="count">
+                                <small>당번 일 3</small>
+                                <h2>환기 해</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
+

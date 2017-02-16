@@ -12,9 +12,7 @@
  *
  * require_tree .
 
-
- 
- *= require_tree ./external
+ *= require_tree ./plugin/external
  *= require_tree ./app
  *= require_self
  */
