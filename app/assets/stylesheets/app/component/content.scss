@@ -1,0 +1,7 @@
+.content{
+	position: absolute;
+	&.cc{
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}

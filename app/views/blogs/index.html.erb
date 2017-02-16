@@ -1,26 +1,30 @@
-<h1>밥 기록실</h1>
-<br>
+<div class="row col-md-12 k_padding pr pl pu pd">
+    <h1>Meal Archive</h1>
+</div>
+
 <% @blogs.each do |blog| %>
-    <div class="row k_padding h">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="k_padding h v white col-md-7">
-                    <%==blog.content%>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="k_padding h v white col-md-4">
-                    <%= link_to 'Edit', edit_blog_path(blog) %>
-                    <br>
-                    <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </div>
-            </div>
+    <div class="row k_margin mu md"></div>  
+
+    <div class="row k_padding pr pl">
+        <div class="col-md-7 k_padding pr pl pu pd white">
+            <%==blog.content%>
         </div>
-    </div>   
+
+        <div class="col-md-1 half"></div>
+
+        <div class="col-md-4 k_padding pr pl pu pd white">
+            <%= link_to 'Edit', edit_blog_path(blog) %>
+            <br>
+            <%= link_to 'Destroy', blog, method: :delete%>
+        </div>
+    </div>
+
+    <div class="row k_margin mu md"></div>  
 <% end %>
 
-
-<%=link_to("/blogs/new", {class: "k_button f c"}) do%>
+<%=link_to("/blogs/new", {class: "blogs_button f c"}) do%>
     <div class="body r naver_color">
         <p class="text" style="color:white">New 밥</p>
     </div>
 <%end%>
+ 

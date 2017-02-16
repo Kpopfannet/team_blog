@@ -1,8 +1,14 @@
 .k_padding{
-	&.h{padding: 0% 2% 0% 2%;}
-	&.v{padding-top: 10px; padding-bottom:10px;}
+	padding: 0px 0px 0px 0px;
+	&.pr{padding-right: 15px}
+	&.pl{padding-left: 15px}
+	&.pu{padding-top: 15px}
+	&.pd{padding-bottom: 15px}
 }
 .k_margin{
-	&.h{margin: 0% 2% 0% 2%}
-	&.v{margin-top: 10px; margin-bottom:10px;}
+	margin: 0px 0px 0px 0px;
+	&.mr{margin-right: 15px}
+	&.ml{margin-left: 15px}
+	&.mu{margin-top: 15px}
+	&.md{margin-bottom: 15px}
 }
