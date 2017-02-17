@@ -1,3 +1,6 @@
 $(document).ready(function () {
-	tinymce.init({ selector:'.tinymce_area' })
+	tinymce.init({ 
+		selector:'.tinymce_area'
+	})
 })
+
