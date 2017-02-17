@@ -1,33 +1,48 @@
-<div class="row Kpadding pr pl pu pd">
+<div class="row Kpadding pr pl pt pb">
     <h1>Meal Archive</h1>
 </div>
 
 <% @blogs.each do |blog| %>
-    <div class="row Kpadding Kmargin md">
-        <div class="col-md-6 Kpadding">
-            <div class="Ktexture ts Kmargin Jimage_box">
+    <div class="row Kpadding Kmargin mb">
+        <div class="col-md-6 Kpadding" style="max-width:500px">
+            <div class="Ktexture ts Kmargin Jsquare">
                 <%if blog.photo.file.nil?%> <h1 align="center" class="Kmargin Kcontent ccc">NO IMG</h1>
-                <%else%> <img class="Kcontent ccc img" src="<%=blog.photo%>">
+                <%else%> <img class="Klocation lcc lmg" src="<%=blog.photo%>">
                 <%end%>
             </div>
-            <div class="Ktexture ts Kpadding pr pl pu pd white">
-                <%==blog.content%>
+
+            <div class="Ktexture ts Kpadding pr pl pt pb white">
+                <%== blog.content%>
             </div>
         </div>
-        <div class="col-md-1 half"></div>
-        <div class="col-md-1 Kpadding pr pl pu pd white">
-            <%= link_to 'Edit', edit_blog_path(blog) %>
-            <br>
-            <%= link_to 'Destroy', blog, method: :delete%>
+        
+        <div class="col-md -d1d5" style="max-width:200px;">
+            <div class="Kshape scc Ktexture ts Klocation lmg white Jsquare Jbottom Aspin_blog_button" align="center">
+                <div class="naver_color At">
+                    <div class="white"></div>
+                </div>
+                <div class="Klocation lcc">
+                    <h4 style="color: #53B391"><strong><%= link_to 'Edit', edit_blog_path(blog) %></strong></h4>
+                    <br>
+                    <h4 style="color: #53B391"><%= link_to 'Destroy', blog, method: :delete%></h4>
+                </div>
+            </div>    
         </div>
     </div>
-    
-    <div class="row row-md-1"></div>
+
+    <div class="row row-md-1"></div> 
+
 <% end %>
 
-<%=link_to("/blogs/new", {class: "blogs_button f c"}) do%>
-    <div class="body r naver_color k_texture ts">
-        <p class="text" style="color:white">New 밥</p>
+<div class="row row-md-1"></div> 
+
+<div class="row row-md-1"></div> 
+
+<%= link_to("/blogs/new") do%>
+    <div class="Kmargin mb Klocation lc lb lf Kshape sbutton1 sc naver_color">
+        <div class="naver_color"></div>
+        <h3 class="Kmargin Klocation lcc" align="center" style="color:white"><strong>New 밥</strong></h3>
     </div>
-<%end%>
- 
+<% end %>
+
+

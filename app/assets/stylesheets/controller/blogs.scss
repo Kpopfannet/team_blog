@@ -1,23 +1,31 @@
-.blogs_button{
-	&.f{
-		position:fixed;
-	}
-	&.c{
-		transform: translateX(-50%);
-		left:50%;
-		bottom:50px;
-	}
-	.body{
-		width:100px;
-		height:50px;
-		text-align: center;
-		padding-top:10px;
-		&.r{
-			border-radius: 20px;
-		}
-		.text{
-			font-size:20px;
-			font-weight: 900;
-		}
-	}
+.Aspin_blog_button{
+    .At{
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            linear-gradient(0deg, transparent 50%, white 50%),
+            linear-gradient(45deg, white 50%, transparent 50%);
+        animation: odd_spin 0.25s linear infinite;
+        animation-direction: alternate-reverse;
+        div{
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            border-radius: 50%;
+            width: calc(100% - 2px);
+            height: calc(100% - 2px);
+        }
+    }        
+    &:hover{
+        .At{        
+            animation: speed_spin 1s linear infinite;
+        }
+    }   
+}
+@keyframes speed_spin{ 
+    100% { transform:rotate(1440deg); } 
+}
+@keyframes odd_spin{ 
+    100% { transform:rotate(30deg); } 
 }
