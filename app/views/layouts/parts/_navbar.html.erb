@@ -6,14 +6,15 @@
         <nav id="nav-main" class="nav-collapse nav-collapse-main" role="navigation">
             <ul id="menu-main-menu" class="nav main-menu">
                 <li class="menu-list"><a class="menu-font" href="/home/index">home</a></li>
+                <li class="menu-list"><a class="menu-font" href="">members</a></li>
+                <li class="menu-list"><%= link_to 'members',  %></li>
                 <li class="menu-list"><a class="menu-font" href="/blogs">blog</a></li>
-                <li class="menu-list"><a class="menu-font"></a></li>
                 <li class="menu-list"><a class="menu-font"></a></li>
             </ul>
         </nav>
     </div>
     <div class="col-md Klocation lc">
-        <%= render partial: "layouts/parts/clock" %>
+        <%= render partial: "layouts/parts/clock", layout: false %>
     </div>
     <div id="footer">
         <ul class="nav f_nav" style="width: 100%;">
