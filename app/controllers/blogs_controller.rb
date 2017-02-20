@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:edit, :update, :destroy]
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.all.reverse
   end
 
   def new
@@ -10,6 +10,7 @@ class BlogsController < ApplicationController
   end
 
   def edit
+    @src="src=#{@blog.photo.url}"
   end
 
   def create

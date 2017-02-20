@@ -1,26 +1,24 @@
 <%= form_for(blog, html:{multipart: "true"}) do |f| %>
-
-    <div class="row Kpadding Kmargin mb">
+    <div class="row Kpadding Kmargin">
         <div class="col-md-6 Kpadding" style="max-width:500px">
             <div class="Ktexture ts Kmargin Jsquare">
-                <%= f.text_area :content, class: "tinymce_area" %>
+                <img class="Klocation lcc lm lmg Jt" <%=@src%>>
+                <div class="Klocation lcc">
+                    <label for="blog_photo" class="btn btn-default btn-block waves-effect kakao_color">Choose Photo</label>
+                    <%= f.file_field :photo, class: "hidden Jpreview"%>
+                </div>
             </div>
         </div>
-        
-        <div class="col-md -d1d5" style="max-width:200px;">
-            <div class="Kshape scc Ktexture ts Klocation lmg white Jsquare Jbottom" align="center">
-                <div class="Klocation lcc">
-                    <label for="blog_photo" class="btn btn-info btn-icon"><i class="zmdi zmdi-search"></i></label>
-                    <%= f.file_field :photo, class: "hidden" %>
-                </div>
-            </div>    
+    </div>
+    <div class="row Kmargin">
+        <div class="col-md-6 Kpadding Ktexture ts" style="max-width:500px">
+            <%= f.text_area :content, class: "tinymce_area"%>
         </div>
     </div>
 
     <%= f.button do%>
-        <div class="Kmargin mb Klocation lc lb lf Kshape sbutton1 sc kakao_color">
+        <div class="Kmargin mb Klocation lc lb lf Kshape sbutton1 sc Ktexture ts kakao_color">
             <h3 class="Kmargin Klocation lcc" align="center" style="color:white"><strong>밥 등록</strong></h3>
         </div>
     <% end %>
-
 <% end %>
