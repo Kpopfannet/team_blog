@@ -15,7 +15,12 @@ members = {
         favorite:   %w(업뎃하셈       여자친구       고기고기      업뎃하셈      업뎃하셈),
         wannabe:    %w(어            오박사         잉여킹       잉여킹        잉여킹),
         hate:       %w(그분           세금        나싫어하는거     송서하         시간),
-        birthday:   %w(1991-10-04   1992-11-11   1993-01-09  1993-12-13 1993-03-25)
+        birthday:   %w(1991-10-04   1992-11-11   1993-01-09  1993-12-13 1993-03-25),
+        img: %w(https://mcycd.gov.ae/sites/MCYCDVar/PublishingImages/no_image.gif
+                http://i.imgur.com/CUgw6O3.jpg
+                https://mcycd.gov.ae/sites/MCYCDVar/PublishingImages/no_image.gif
+                https://mcycd.gov.ae/sites/MCYCDVar/PublishingImages/no_image.gif
+                https://mcycd.gov.ae/sites/MCYCDVar/PublishingImages/no_image.gif)
 }
 
 i = 0
@@ -25,8 +30,9 @@ members[:name].each do |name|
     wannabe     = members[:wannabe][i]
     hate        = members[:hate][i]
     birthday    = members[:birthday][i]
+    img         = members[:img][i]
 
-    Member.create(name: name, subname: su, favorite: favorite, wannabe: wannabe, hate: hate, birthday: birthday)
+    Member.create(name: name, subname: su, favorite: favorite, wannabe: wannabe, hate: hate, birthday: birthday, img: img)
     i += 1
 end
 
