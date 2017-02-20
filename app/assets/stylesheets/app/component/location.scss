@@ -1,15 +1,22 @@
-.Kcontent{
+.Klocation{
 	position: absolute;
-	&.cc{
+	&.lf{
+		position: fixed;
+	}
+
+	&.lc{
 		left: 50%;
 		transform: translateX(-50%);
 	}
-	&.ccc{
+	&.lcc{
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
 	}
-	&.img{
+	&.lmg{
 		width: 100%;
+	}
+	&.lb{
+		bottom:0px
 	}
 }
