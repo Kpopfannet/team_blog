@@ -6,28 +6,30 @@
     <div class="row Kpadding Kmargin md">
         <div class="col-md-6 Kpadding">
             <div class="Ktexture ts Kmargin Jimage_box">
-                <%if blog.photo.file.nil?%> <h1 align="center" class="Kmargin Kcontent ccc">NO IMG</h1>
-                <%else%> <img class="Kcontent ccc img" src="<%=blog.photo%>">
-                <%end%>
+                <% if blog.photo.file.nil? %>
+                    <h1 align="center" class="Kmargin Kcontent ccc">NO IMG</h1>
+                <% else %>
+                    <img class="Kcontent ccc img" src="<%= blog.photo %>">
+                <% end %>
             </div>
             <div class="Ktexture ts Kpadding pr pl pu pd white">
-                <%==blog.content%>
+                <%== blog.content %>
             </div>
         </div>
         <div class="col-md-1 half"></div>
         <div class="col-md-1 Kpadding pr pl pu pd white">
             <%= link_to 'Edit', edit_blog_path(blog) %>
             <br>
-            <%= link_to 'Destroy', blog, method: :delete%>
+            <%= link_to 'Destroy', blog, method: :delete %>
         </div>
     </div>
     
     <div class="row row-md-1"></div>
 <% end %>
 
-<%=link_to("/blogs/new", {class: "blogs_button f c"}) do%>
+<%= link_to new_blog_path, {class: "blogs_button f c"} do %>
     <div class="body r naver_color k_texture ts">
         <p class="text" style="color:white">New 밥</p>
     </div>
-<%end%>
+<% end %>
  
