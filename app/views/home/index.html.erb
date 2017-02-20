@@ -5,7 +5,7 @@
 <div class="row Kpadding pr pl">
     <div class="col-md-3 Kpadding">
         <div class="dash-widget-item white Kmargin" style="height:390px">
-            <h1 align="center" class="Kmargin Klocation lcc"><%= @duty[:Name]%></h1>
+            <h1 align="center" class="Kmargin Klocation lcc"><%= @member.name %></h1>
         </div>
     </div>
     <div class="col-md-4">
@@ -17,47 +17,26 @@
                             <div class="chart stats-bar"></div>
                             <div class="count">
                                 <small>Main Role</small>
-                                <h2><%= @duty[:Main_Role]%></h2>
+                                <h2><%= @member.roll %></h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
+                <% @duty[:shit].count.times do |i| %>
                 <div class="col-md-12">
-                    <div class="mini-charts-item bgm-lightgreen">
+                    <div class="mini-charts-item <%= @duty[:mini_chart_color][i] %>">
                         <div class="clearfix">
-                            <div class="chart stats-bar-2"></div>
+                            <div class="chart <%= @duty[:chart_class][i] %>"></div>
                             <div class="count">
-                                <small>당번 일 1</small>
-                                <h2>아침 사와라</h2>
+                                <small>당번 일 <%= i+1 %></small>
+                                <h2><%= @duty[:shit][i] %></h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-md-12">
-                    <div class="mini-charts-item bgm-orange">
-                        <div class="clearfix">
-                            <div class="chart stats-line"></div>
-                            <div class="count">
-                                <small>당번 일 2</small>
-                                <h2>청소 틈틈히 해</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-12">
-                    <div class="mini-charts-item bgm-bluegray">
-                        <div class="clearfix">
-                            <div class="chart stats-line-2"></div>
-                            <div class="count">
-                                <small>당번 일 3</small>
-                                <h2>환기 해</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <% end %>
+
             </div>
         </div>
     </div>

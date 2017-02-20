@@ -4,6 +4,7 @@ class Member < ApplicationRecord
     has_many :articles
     
     # repeatable scope
+    default_scope { order(birthday: :asc) }
     scope :sample, -> { all.sample }
     scope :older, -> { order(birthday: :asc) }
 
@@ -17,4 +18,8 @@ class Member < ApplicationRecord
     end
     
     # extra tasks
+    def self.roommate
+        arr = %w(함상빈 김용현 송서하 장종현)
+        self.where(name: arr)
+    end
 end
