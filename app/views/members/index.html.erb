@@ -2,40 +2,42 @@
 
 <h1>Members</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Subname</th>
-      <th>Img</th>
-      <th>Desc</th>
-      <th>Favorite</th>
-      <th>Hate</th>
-      <th>Wannabe</th>
-      <th>Birthday</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div>
+    <div>
 
-  <tbody>
-    <% @members.each do |member| %>
-      <tr>
-        <td><%= member.name %></td>
-        <td><%= member.subname %></td>
-        <td><%= member.img %></td>
-        <td><%= member.desc %></td>
-        <td><%= member.favorite %></td>
-        <td><%= member.hate %></td>
-        <td><%= member.wannabe %></td>
-        <td><%= member.birthday %></td>
-        <td><%= link_to 'Show', member %></td>
-        <td><%= link_to 'Edit', edit_member_path(member) %></td>
-        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <% @members.each do |member| %>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header card-padding-sm Jsquare beuty_dark" style="padding: 0;">
+                    <img src="<%= member.img %>" alt="<%= '우리의 ' + member.subname %>" class="Klocation lmg lcc"/>
+                </div>
+                <div class="card-body card-padding-sm" style="border-top: 1px solid #e9e9e9">
+                    <p><b><%= member.subname %> (<%= member.name %>)</b></p>
+                    <p><b><%= member.roll %></b></p>
+                    <p><%== member.desc %></p>
+                    <hr>
+                    <p>
+                        <td><%= link_to 'Show', member, class: 'btn btn-default btn-no-bootstrap btn-info btn-sm' %></td>
+
+                        <% if current_user == member || is_admin? %>
+                            <td><%= link_to ' Edit', edit_member_path(member), class: 'btn btn-default btn-no-bootstrap btn-warning btn-sm' %></td>
+                            <% if is_admin? %>
+                                <td><%= link_to ' Destroy', member, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-no-bootstrap btn-danger btn-sm' %></td>
+                            <% end %>
+                        <% end %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <% end %>
+
+    </div>
+</div>
 
 <br>
-
-<%= link_to 'New Member', new_member_path %>
+<% if user_signed_in? %>
+    <%= link_to current_user.name, '#', class: 'btn btn-default btn-no-bootstrap' %>
+<% end %>
+<% if is_admin? %>
+    <%= link_to 'New Member', new_member_path, class: 'btn btn-default btn-no-bootstrap' %>
+<% end %>

@@ -8,6 +8,8 @@ class Member < ApplicationRecord
     scope :sample, -> { all.sample }
     scope :older, -> { order(birthday: :asc) }
 
+    # collBack exec
+    
     # methods
     def roll(history: false)
         rolls = self.rolls
@@ -18,8 +20,9 @@ class Member < ApplicationRecord
     end
     
     # extra tasks
-    def self.roommate
-        arr = %w(함상빈 김용현 송서하 장종현)
-        self.where(name: arr)
-    end
+    public
+        def self.roommate
+            arr = %w(함상빈 김용현 송서하 장종현)
+            self.where(name: arr)
+        end
 end
