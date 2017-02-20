@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :blogs
-  root 'home#index'
-  get 'home/index'
+    resources :categories
+    resources :articles
+    resources :rolls
+    resources :members
+    resources :blogs
+    
+    get 'home/index'
+    root 'home#index'
 end
