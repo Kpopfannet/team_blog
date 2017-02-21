@@ -14,8 +14,8 @@ module ApplicationHelper
         #
         # => 관리자 권한 스위치
             # admin << "함상빈"
-            admin << "김용현"
-            # admin << "송서하"
+            # admin << "김용현"
+            admin << "송서하"
             # admin << "장종현"
             # admin << "서재은"
         
