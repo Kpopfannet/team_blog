@@ -39,6 +39,7 @@
   <strong>Birthday:</strong>
   <%= @member.birthday %>
 </p>
-
-<%= link_to 'Edit', edit_member_path(@member) %> |
+<% if is_admin? %>
+    <%= link_to 'Edit', edit_member_path(@member) %> |
+<% end %>
 <%= link_to 'Back', members_path %>
