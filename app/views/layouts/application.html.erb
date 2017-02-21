@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>TeamBlog</title>
-        <%= csrf_meta_tags %>
-        <%= stylesheet_link_tag    'application', media: 'all' %>
-        <%= stylesheet_link_tag    "controller/"+params[:controller] %>
-        <%= javascript_include_tag 'application' %>
-        <%= javascript_include_tag "controller/"+params[:controller] %>
-    </head>
+<head>
+<title>TeamBlog</title>
+<%= csrf_meta_tags %>
+<%= stylesheet_link_tag    'application', media: 'all' %>
+<%= stylesheet_link_tag    "controller/"+params[:controller] %>
+<%= javascript_include_tag 'application' %>
+<%= javascript_include_tag "controller/"+params[:controller] %>
+</head>
 
-    <body class="default_color">
-        <%= render partial: 'layouts/parts/navbar', layout: false %>
-        <div class="height-match_parent content_wrapper">
-            <div class="container-fluid">
-                <%= yield %>                
-            </div>
+<body class="default_color">
+<%= render partial: 'layouts/parts/navbar', layout: false %>
+    <div class="height-match_parent content_wrapper">
+        <div class="container-fluid">
+
+<%= yield %>                
+        
         </div>
-    </body>
+    </div>
+</body>
+<script>
 
-    <script>
-        <% @scripts = [] if defined?(@scripts) == nil %>
-        <% @scripts.each do |script| %>
-            <%== script %>
-        <% end %>
-    </script>
+    <% @scripts = [] if defined?(@scripts) == nil %>
+    <% @scripts.each do |script| %>
+    <%==script%>
+    <% end %>
 
+</script>
 </html>
