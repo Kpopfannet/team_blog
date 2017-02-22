@@ -3,7 +3,7 @@
         <div class="col-md-6 Kpadding" style="max-width:500px">
             <div class="Ktexture ts Kmargin Jsquare">
                 <img class="Klocation lcc lm lmg Jt" <%= @src %>>
-                <div class="Klocation lcc">
+                <div class="Klocation la lcc">
                     <label for="blog_photo" class="btn btn-default btn-block waves-effect kakao_color">Choose Photo</label>
                     <%= f.file_field :photo, class: "hidden Jpreview" %>
                 </div>
@@ -12,7 +12,7 @@
     </div>
     <div class="row Kmargin">
         <div class="col-md-6 Kpadding Ktexture ts" style="max-width:500px">
-            <%= f.text_area :content, class: "tinymce_area" %>
+            <div class="html-editor"></div>
         </div>
     </div>
     <%= f.button do %>
@@ -21,3 +21,4 @@
         </div>
     <% end %>
 <% end %>
+
