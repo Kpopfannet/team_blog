@@ -55,6 +55,9 @@ a:hover {
 abbr[title] {
   border-bottom: 1px dotted;
 }
+a.dropdownToggle {
+    cursor: pointer !important;
+}
 b,
 strong {
   font-weight: bold;

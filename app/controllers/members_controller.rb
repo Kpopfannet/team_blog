@@ -1,5 +1,4 @@
 class MembersController < ApplicationController
-    include ApplicationHelper
     before_action :set_member, only: [:show, :edit, :update, :destroy]
   
     # 라우팅 주석 절대 지우지 말 것
@@ -7,7 +6,7 @@ class MembersController < ApplicationController
         set_session(Member.find_by_name(params[:name]))
         
         respond_to do |format|
-            format.html { redirect_to members_path, notice: '로그인 성공!' }
+            format.html { redirect_to :back, notice: '로그인 성공!' }
             format.json { head :no_content }
         end
     end
@@ -16,7 +15,7 @@ class MembersController < ApplicationController
         destroy_session
 
         respond_to do |format|
-            format.html { redirect_to members_path, notice: '잘가라 빠잉' }
+            format.html { redirect_to :back, notice: '잘가라 빠잉' }
             format.json { head :no_content }
         end
     end
@@ -28,6 +27,7 @@ class MembersController < ApplicationController
 
     # GET /members/1
     def show
+        @articles = @member.articles
     end
     
     # GET /members/new

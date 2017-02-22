@@ -13,6 +13,7 @@ gem 'carrierwave', '~> 1.0'
 # plug-in for helping development
 gem 'awesome_print', '~> 1.7'
 gem 'faker'
+gem 'seed_dump'
 
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'mysql2', '~> 0.4.5'
