@@ -16,16 +16,15 @@
             <%== blog.content %>
         </div>
     </div>
-    
     <div class="col-md -d1d5 Kpadding Kmargin ml" style="max-width:200px;">
-        <div class="Kshape scc Ktexture ts Klocation lmg white Jsquare Jbottom Aspin_blog_button" align="center">
-            <div class="naver_color A">
+        <div class="Kshape scc Ktexture ts Klocation la lmg white Jsquare Jbottom Aspin_blog_button" align="center">
+            <div class="naver_color At">
                 <div class="white"></div>
             </div>
-            <div class="Klocation lcc">
+            <div class="Klocation la lcc">
                 <h4 style="color: #53B391"><strong><%= link_to 'Edit', edit_blog_path(blog) %></strong></h4>
                 <br>
-                <h4 style="color: #53B391"><%= link_to 'Destroy', blog, method: :delete %></h4>
+                <h5 style="color: #53B391"><%= link_to 'Destroy', blog, method: :delete %></h5>
             </div>
         </div>
     </div>
@@ -36,7 +35,7 @@
 <div class="row row-md-1"></div> 
 <div class="row row-md-1"></div> 
 <%= link_to new_blog_path do %>
-    <div class="Kmargin mb Klocation lc lb lf Kshape sbutton1 sc naver_color">
+    <div class="Kmargin mb Klocation lc lb lf Kshape sbutton1 sc Ktexture ts naver_color">
         <div class="naver_color"></div>
         <h3 class="Kmargin Klocation lcc" align="center" style="color:white"><strong>New 밥</strong></h3>
     </div>

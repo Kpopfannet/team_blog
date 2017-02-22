@@ -16,6 +16,14 @@
 // require turbolinks
 // require_tree .
 
-//= require_tree ./plugin/external
-//= require ./plugin/tinymce/js/tinymce/tinymce.min.js
-//= require_tree ./app
+//= require ./_plugin/external/jquery/js/charts
+//= require ./_plugin/external/jquery/js/functions
+//= require ./_plugin/external/jquery/vendors/bower_components/bootstrap/dist/js/bootstrap.min
+//= require ./_plugin/external/jquery/vendors/bootstrap-growl/bootstrap-growl.min
+//= require ./_plugin/external/jquery/vendors/sparklines/jquery.sparkline.min
+//= require ./_plugin/external/jquery/vendors/bower_components/Waves/dist/waves
+//= require ./_plugin/external/jquery/vendors/summernote/dist/summernote-updated.min
+
+//= require_tree ./_plugin/_custom
+//= require_tree ./_app
+
