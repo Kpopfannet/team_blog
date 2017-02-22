@@ -72,3 +72,12 @@ function Jbottom(classname){
 function gogoTop(point) {
     $('body').animate({scrollTop: point}, '500');
 }
+
+$(document).ready(function () {
+    $('a.dropdownToggle').click(function () {
+        var target_id   = $(this).attr('obj_id');
+        var target      = '._'+ target_id;
+
+        $(target).toggleClass('open')
+    });
+});
