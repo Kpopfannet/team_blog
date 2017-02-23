@@ -12,13 +12,13 @@
  *
  * require_tree .
 
-
- *= require_tree ./_plugin/_custom
-
  *= require ./_plugin/external/jquery/css/app.min.1
  *= require ./_plugin/external/jquery/css/app.min.2
  *= require ./_plugin/external/jquery/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min
  *= require ./_plugin/external/jquery/vendors/summernote/dist/summernote
+
+ *= require_tree ./_plugin/_custom
+
  *= require_tree ./_app
  *= require_self
  */
