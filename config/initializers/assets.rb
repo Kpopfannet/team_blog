@@ -12,7 +12,9 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( _controller/members.css )
 Rails.application.config.assets.precompile += %w( _controller/blogs.css )
 Rails.application.config.assets.precompile += %w( _controller/home.css )
+Rails.application.config.assets.precompile += %w( _controller/articles.css )
 
 Rails.application.config.assets.precompile += %w( _controller/members.js )
 Rails.application.config.assets.precompile += %w( _controller/blogs.js )
 Rails.application.config.assets.precompile += %w( _controller/home.js )
+Rails.application.config.assets.precompile += %w( _controller/articles.js )
