@@ -5,11 +5,9 @@ git_source(:github) do |repo_name|
     "https://github.com/#{repo_name}.git"
 end
 
-
 gem 'mini_magick', '~> 4.6', '>= 4.6.1'
 gem 'carrierwave', '~> 1.0'
 
-#
 # plug-in for helping development
 gem 'awesome_print', '~> 1.7'
 gem 'faker'

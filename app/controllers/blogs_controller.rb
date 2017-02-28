@@ -6,22 +6,15 @@ class BlogsController < ApplicationController
   end
 
   def new
-    @blog = Blog.new
+    blog = Blog.create.destroy
+    @blog = Blog.new(id: blog.id)
   end
 
   def edit
-    @src="src=#{@blog.photo.url}"
   end
 
   def create
-    @blog = Blog.new(blog_params)
-    respond_to do |format|
-      if @blog.save
-        format.html { redirect_to "/blogs", notice: 'Blog was successfully created.' }
-      else
-        format.html { render :new }
-      end
-    end
+    @blog = Blog.create(blog_params)
   end
 
   def update
@@ -47,6 +40,6 @@ class BlogsController < ApplicationController
     end
 
     def blog_params
-      params.fetch(:blog, {}).permit(:content, :photo)
+      params.fetch(:blog, {}).permit(:id, :content, :photo, {photolist: []})
     end
 end
