@@ -1,7 +1,7 @@
 <%= form_for(blog, html: {multipart: "true", class: "Jwysiwyg"}) do |f| %>
     <%= f.hidden_field :id, value: "#{@blog.id}"%>
     <div class="row Kpadding Kmargin">
-        <div class="col-md-8 Kpadding" style="max-width:500px">
+        <div class="col-md-8 Kpadding" style="max-width:550px">
             <div class="Ktexture ts Kmargin Jsquare">
                 <img class="Klocation lcc lm lmg Jt" src="<%=@blog.photo.url%>">
                 <div class="Klocation la lcc">
@@ -12,16 +12,18 @@
         </div>
     </div>
     <div class="row Kmargin">
-        <div class="col-md-8 Kpadding Ktexture ts" style="max-width:500px">
+        <div class="col-md-8 Kpadding Ktexture ts" style="max-width:550px">
             <%= f.text_area :content, class: "html-editor"%>
+            <script> $('.html-editor').summernote({}) </script>
         </div>
     </div>
     <div class="row row-md-1"></div>
     <div class="row row-md-1"></div>
     <div class="row row-md-1"></div>
-    <%= button_to do %>
+    <button>
         <div class="Kmargin mb Klocation lc lb lf Kshape sbutton1 sc Ktexture ts kakao_color">
             <h3 class="Kmargin Klocation lcc" align="center" style="color:white"><strong>밥 등록</strong></h3>
         </div>
-    <% end %>
+    </button>
 <% end %>
+

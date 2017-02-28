@@ -499,8 +499,8 @@ $(document).ready(function(){
      * HTML Editor
      */
     if ($('.html-editor')[0]) {
-	   $('.html-editor').summernote({
-            height: 150,
+        $('.html-editor').summernote({
+            height: 150
         });
     }
 
