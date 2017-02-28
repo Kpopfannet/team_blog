@@ -17,7 +17,7 @@ function Jwysiwyg(classname, field, name, directory, redirect){
 	        $.each(wysiwyg.find("img"), function(i, img){
 	            filename = $(img).attr("data-filename")
 	            if(filename!=undefined){
-	            	$(img).attr("src", directory+"/"+id+"/"+filename) 
+	            	$(img).attr("src", directory+"/"+id+"/"+filename).removeAttr("data-filename")
 		            $.each(photolist.getAll("photolist[]"), function(i, photo){
 						if(photo.name==filename){form.append(field+"[photolist][]", photo) } }) } })
 	        form.append(field+name, wysiwyg.html())
