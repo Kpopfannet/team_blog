@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 	def index
         members = Member.roommate
 
-        turn = (getTime/86400+2).modulo(members.count) + 1
+        turn = (getTime/86400+2).modulo(members.count)
         @member = members[turn]
 
         duty = {}

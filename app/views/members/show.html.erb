@@ -19,15 +19,14 @@
 
                     <% if (user_signed_in? && (current_user == @member)) || is_admin? %>
                     <ul class="actions" style="text-align: right;">
-                        <li class="dropdown _<%= article.id %>">
-                            <a class="dropdownToggle"  obj_id="<%= article.id %>" data-toggle="dropdown" aria-expanded="false">
+                        <li class="dropdown">
+                            <a data-toggle="dropdown">
                                 <i class="zmdi zmdi-more-vert"></i>
-                            </a>
-
+                            </a>                          
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li><%= link_to 'Danger !', '#', class: 'bgm-red', style: 'color: #fff' %></li>
-                                <li><%= link_to '고치기', edit_article_path %></li>
-                               <li><%= link_to '삭제', article, method: :delete, data: { confirm: '정말 삭제할꺼에요?' }, class: '' %></li>
+                                <li><%= link_to '고치기', edit_article_path %></li> 
+                                <li><%= link_to '삭제', article, method: :delete, data: { confirm: '정말 삭제할꺼에요?' }, class: "Jforce"%></li> 
                             </ul>
                         </li>
                     </ul>

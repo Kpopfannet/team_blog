@@ -1,8 +1,9 @@
-<%= form_for(blog, html:{multipart: "true"}) do |f| %>
+<%= form_for(blog, html: {multipart: "true", class: "Jwysiwyg"}) do |f| %>
+    <%= f.hidden_field :id, value: "#{@blog.id}"%>
     <div class="row Kpadding Kmargin">
-        <div class="col-md-6 Kpadding" style="max-width:500px">
+        <div class="col-md-8 Kpadding" style="max-width:500px">
             <div class="Ktexture ts Kmargin Jsquare">
-                <img class="Klocation lcc lm lmg Jt" <%= @src %>>
+                <img class="Klocation lcc lm lmg Jt" src="<%=@blog.photo.url%>">
                 <div class="Klocation la lcc">
                     <label for="blog_photo" class="btn btn-default btn-block waves-effect kakao_color">Choose Photo</label>
                     <%= f.file_field :photo, class: "hidden Jpreview" %>
@@ -11,17 +12,16 @@
         </div>
     </div>
     <div class="row Kmargin">
-        <div class="col-md-6 Kpadding Ktexture ts" style="max-width:500px">
+        <div class="col-md-8 Kpadding Ktexture ts" style="max-width:500px">
             <%= f.text_area :content, class: "html-editor"%>
         </div>
     </div>
     <div class="row row-md-1"></div>
     <div class="row row-md-1"></div>
     <div class="row row-md-1"></div>
-    <%= f.button do %>
+    <%= button_to do %>
         <div class="Kmargin mb Klocation lc lb lf Kshape sbutton1 sc Ktexture ts kakao_color">
             <h3 class="Kmargin Klocation lcc" align="center" style="color:white"><strong>밥 등록</strong></h3>
         </div>
     <% end %>
 <% end %>
-

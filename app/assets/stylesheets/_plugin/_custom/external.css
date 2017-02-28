@@ -13,3 +13,7 @@ a.dropdownToggle {
 body.sw-toggled #footer {
 	padding-left: 0px;
 }
+
+.note-popover{
+	display:none;
+}
