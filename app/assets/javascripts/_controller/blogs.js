@@ -1,3 +1,3 @@
 $( window ).load(function(){
-	Jwysiwyg('.Jwysiwyg', 'blog', '[content]', '/uploads/blog/photolist', '/blogs', '[photo]')
+	Jwysiwyg('.Jwysiwyg', 'blog', '[content]', aws_s3_url+'/uploads/blog/photolist', '/blogs')
 })
