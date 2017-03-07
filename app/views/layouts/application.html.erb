@@ -9,13 +9,163 @@
 <%= javascript_include_tag "_controller/"+params[:controller] %>
 </head>
 <body class="default_color" style="font-size: 14px;">
-<%= render partial: 'layouts/parts/navbar', layout: false %>
+<%= render partial: '/layouts/parts/navbar' %>
 <div style="min-width:992px">
 	<div style="min-width:250px;width:20%;max-width:300px;height:30px;float:left;visibility:hidden;"></div>
 	<div class="container-fluid" style="min-width:742px;width:74%;float:left">
 <%= yield %>                
 	</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="new_notice naver_color">
+	<p style="color:white;text-align:center"><strong>새로운 공지</strong></p>
+</div>
+<div class="Jnotice">
+<% Notice.all.each do |notice| %>
+	<div id="<%=notice.id%>notice">
+		<div class="notice" style="left:<%=notice.x%>px;top:<%=notice.y%>px">
+			<div class="moving naver_color">click and move</div>
+			<div class="nothing hidden">click and stop</div>
+			<div class="deleting">x</div>
+			<div class="textarea"></div>
+		</div>	
+	</div>
+<% end %>
+</div>
+
+<script type="text/javascript">
+function CreateNotice(id){
+	$(".Jnotice").append(
+"<div id='"+id+"notice'>\
+	<div class='notice' style='left:280px;top:550px'>\
+		<div class='moving naver_color'>click and move</div>\
+		<div class='nothing hidden'>click and stop</div>\
+		<div class='deleting'>x</div>\
+	</div>\
+</div>"
+	)
+	$("#"+id+"notice .deleting").click(function(){$.ajax({url: "/notices/"+id, method: "delete"}) })
+	$("#"+id+"notice .moving").click(function(){
+		$(this).parent().addClass("holding")
+		$(this).parent().find(".nothing").removeClass("hidden")
+		$(this).addClass("hidden")
+	})
+	$("#"+id+"notice .nothing").click(function(e){
+		$(this).parent().removeClass("holding")
+		$(this).parent().find(".moving").removeClass("hidden")
+		$(this).addClass("hidden")
+		$.ajax({url: "/notices/"+id, method: "put", data: {"x": e.clientX-25, "y": e.clientY-10 }})
+	})
+}
+function DeleteNotice(id){
+	$("#"+id+"notice").remove()
+}
+function UpdateNotice(id, x, y){
+	$("#"+id+"notice .notice").css("left", x+"px").css("top", y+"px")
+}
+function LoadNotice(){
+	$("body").mousemove(function(e){
+		$(".notice.holding").css("top",e.clientY-10).css("left",e.clientX-25)
+	})
+	$(".new_notice").click(function(){
+		$.ajax({url: "/notices", method: "post"})
+	})
+	$(".notice .moving").click(function(){
+		$(this).parent().addClass("holding")
+		$(this).parent().find(".textarea").addClass("hidden")
+		$(this).parent().find("textarea").removeClass("hidden")
+		$(this).parent().find(".nothing").removeClass("hidden")
+		$(this).addClass("hidden")
+	})
+	$(".notice .nothing").click(function(e){
+		$(this).parent().removeClass("holding")
+		$(this).parent().find(".textarea").removeClass("hidden")
+		$(this).parent().find("textarea").addClass("hidden")
+		$(this).parent().find(".moving").removeClass("hidden")
+		$(this).addClass("hidden")
+		id = parseInt($(this).parent().parent()[0].id)
+		$.ajax({url: "/notices/"+id, method: "put", data: {"x": e.clientX-25, "y": e.clientY-10 }})
+	})
+	$(".notice .deleting").click(function(){
+		id = parseInt($(this).parent().parent()[0].id)
+		$.ajax({url: "/notices/"+id, method: "delete"})
+	})
+}
+LoadNotice()
+</script>
+
+<style>
+	.new_notice{
+		width:80px;height:80px;border-radius:50%;position:fixed;padding-top:30px;
+		left:80px;top:550px;cursor:pointer;
+	}
+	.notice{
+		width:200px;height:100px;background-color:rgba(0,0,0,0.3);position:fixed;
+		box-shadow: 2px 2px 2px black;
+	}
+	.notice.holding{box-shadow: 10px 10px 10px black;}
+	.notice .moving{height:20px;color:white; text-align: center;width:200px; cursor:pointer;}
+	.notice .nothing{height:20px;background-color:red;color:white; text-align: center;width:200px; cursor:pointer;}
+	.notice .deleting{margin-top:-60px;font-size:30px;width:30px;height:40px; cursor:pointer;}
+	.notice .textarea{margin-top:20px;height:80px;width:100%;}
+	.notice textarea{}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 <script>
 

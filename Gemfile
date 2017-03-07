@@ -8,6 +8,7 @@ end
 gem 'fog-aws', '~> 1.2', '>= 1.2.1'
 gem 'mini_magick', '~> 4.6', '>= 4.6.1'
 gem 'carrierwave', '~> 1.0'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 
 # plug-in for helping development
 gem 'awesome_print', '~> 1.7'

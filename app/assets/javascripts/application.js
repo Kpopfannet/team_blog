@@ -13,8 +13,9 @@
 
 //= require jquery
 //= require jquery_ujs
-// require turbolinks
-// require_tree .
+//= require cable
+
+
 
 //= require ./_plugin/external/jquery/vendors/summernote/dist/summernote-updated.min
 //= require ./_plugin/external/jquery/vendors/bower_components/Waves/dist/waves

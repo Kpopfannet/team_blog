@@ -1,0 +1,5 @@
+render = "<%= escape_javascript(render partial: 'page', locals: {blogs: @blogs})%>"
+$(".Jpagemove").append(render)
+if(<%= @blogs.size%>=="0"){
+	$(".Jpagemove").removeClass("Jpagemove")
+}

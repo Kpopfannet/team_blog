@@ -2,7 +2,8 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:edit, :update, :destroy]
 
   def index
-    @blogs = Blog.all.reverse
+    @blogs = Blog.paginate(page: params[:page], per_page: 2).order('created_at DESC')
+    render "_page_move" if params[:page]
   end
 
   def new

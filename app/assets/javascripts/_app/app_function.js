@@ -1,3 +1,22 @@
+// 해당 클래스가 표현하는 orm을 pull up 페이지네이션 한다
+// Jpagemove(classname, 아작스통신 대상 url)
+function Jpagemove(classname, url){
+	function operator(){
+		$(window).scroll(function(){
+		    if($(window).scrollTop()==$(document).height()-$(window).height()){
+		    	if($(classname)[0]){
+			        page = parseInt($(classname).attr("page"))+1
+			        $.ajax({url: url, method: "get", data: {"page": page} }) 
+			    	.done(function(){$(classname).attr("page", page)}) 	
+		    	}
+		    } 
+		})
+	}
+	$(classname).attr("page", 1)
+	operator(classname, url)		
+}
+
+
 // 위지윅 사진처리를 위한 함수로, form에 .Jwysiwyg클래스를 넣어주어 사용한다.
 // scaffold와 summernote의 조합으로 위지윅을 구현할 때만 사용 가능하다.
 // 백에서 action에 create를 사용해 view로 [input: id]를 전달해야한다.
@@ -6,7 +25,8 @@ function Jwysiwyg(classname, field, name, directory, redirect){
 	function operator1(classname){
 	    $("body "+classname).on("change", ".note-image-input", function(){
 	        files = $(classname+" .note-image-input")[0].files
-	        $.each(files, function(i, file){photolist.append("photolist[]", file) }) })
+	        $.each(files, function(i, file){photolist.append("photolist[]", file) }) 
+	    })
 	}
 	function operator2(classname, field, name, directory, redirect){
 	    $(classname).on("submit", function(e){
@@ -19,12 +39,16 @@ function Jwysiwyg(classname, field, name, directory, redirect){
 	            if(filename!=undefined){
 	            	$(img).attr("src", directory+"/"+id+"/"+filename).removeAttr("data-filename")
 		            $.each(photolist.getAll("photolist[]"), function(i, photo){
-						if(photo.name==filename){form.append(field+"[photolist][]", photo) } }) } })
+						if(photo.name==filename){form.append(field+"[photolist][]", photo) } 
+					}) 
+		        } 
+		    })
 	        form.append(field+name, wysiwyg.html())
 	        $.ajax({
 	        	url: $(classname).attr("action"), method: $(classname).attr("method"), 
 	        	processData: false, contentType: false, data: form }) 
-    		$( document ).ajaxComplete(function() {document.location.replace(redirect) }) })
+    		$( document ).ajaxComplete(function() {document.location.replace(redirect) }) 
+    	})
 	}
 	photolist = new FormData()
     operator1(classname)
@@ -37,7 +61,8 @@ function Jwysiwyg(classname, field, name, directory, redirect){
 function Jforce(classname){
 	function operator(classname){
 		$("body").on('click', classname, function(){
-			$(this).click() }) 
+			$(this).click() 
+		}) 
 	}
 	operator(classname)
 }
@@ -55,7 +80,10 @@ function Jpreview(classname){
 			    $(file_reader).on("load", function(e){
 			        target.attr("src", e.target.result)
 			        target.removeClass("lmgv").addClass("lmg")
-			        Jsquare(".Jsquare") }) }) })
+			        Jsquare(".Jsquare") 
+			    }) 
+			}) 
+		})
 	}
 	objs=$(classname)
 	operator(objs)
@@ -73,8 +101,9 @@ function Jsquare(classname) {
 			obj.css("min-height", width)
 	        child=$(obj.children()[0])
 	        if(child.hasClass("lmg")){
-	        	if(parseInt(child.css("height"))>width){
-	        		child.addClass("lmgv").removeClass("lmg") } } })
+	        	if(parseInt(child.css("height"))>width){child.addClass("lmgv").removeClass("lmg") }
+	        } 
+	    })
 	}
     objs=$(classname)
     operator(objs)
@@ -94,7 +123,8 @@ function Jbottom(classname){
 				next_height=$(col).css("height")
 				if(next_height>height){height=next_height} })
 			parent.css("height",height)
-			obj.addClass("lb") })
+			obj.addClass("lb") 
+		})
 	}
 	objs=$(classname)
     operator(objs)
