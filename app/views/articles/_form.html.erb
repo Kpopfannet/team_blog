@@ -1,0 +1,79 @@
+<%#= form_for(article) do |f| %>
+  <!--<%# if article.errors.any? %>-->
+    <!--<div id="error_explanation">-->
+      <!--<h2><%#= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>-->
+
+      <!--<ul>-->
+      <!--<%# article.errors.full_messages.each do |message| %>-->
+        <!--<li><%#= message %></li>-->
+      <!--<%# end %>-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--<%# end %>-->
+
+  <!--<div class="field">-->
+    <!--<%#= f.label :member_id %>-->
+    <!--<%#= f.text_field :member_id %>-->
+  <!--</div>-->
+
+  <!--<div class="field">-->
+    <!--<%#= f.label :category_id %>-->
+    <!--<%#= f.text_field :category_id %>-->
+  <!--</div>-->
+
+  <!--<div class="field">-->
+    <!--<%#= f.label :template %>-->
+    <!--<%#= f.text_field :template %>-->
+  <!--</div>-->
+
+  <!--<div class="field">-->
+    <!--<%#= f.label :thumbnail %>-->
+    <!--<%#= f.text_field :thumbnail %>-->
+  <!--</div>-->
+
+  <!--<div class="field">-->
+    <!--<%#= f.label :title %>-->
+    <!--<%#= f.text_field :title %>-->
+  <!--</div>-->
+
+  <!--<div class="field">-->
+    <!--<%#= f.label :preview %>-->
+    <!--<%#= f.text_area :preview %>-->
+  <!--</div>-->
+
+  <!--<div class="field">-->
+    <!--<%#= f.label :photo %>-->
+    <!--<%#= f.text_field :photo %>-->
+  <!--</div>-->
+
+  <!--<div class="actions">-->
+    <!--<%#= f.submit %>-->
+  <!--</div>-->
+<%# end %>
+
+<%= form_for(article, html:{multipart: "true"}) do |f| %>
+    <% if @member_id %>
+        <%= f.hidden_field :member_id, value: @member_id %>
+    <% end %>
+    <div class="row Kpadding Kmargin">
+        <div class="col-md-6 Kpadding" style="max-width:500px">
+            <div class="Ktexture ts Kmargin Jsquare">
+                <img class="Klocation lcc lm lmg Jt">
+                <div class="Klocation lcc">
+                    <label for="blog_photo" class="btn btn-default btn-block waves-effect kakao_color">Choose Photo</label>
+                    <%= f.file_field :photo, class: "hidden Jpreview" %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row Kmargin">
+        <div class="col-md-6 Kpadding Ktexture ts" style="max-width:500px">
+            <%= f.text_area :content, class: "html-editor"%>
+        </div>
+    </div>
+    <%= f.button do %>
+        <div class="Kmargin mb Klocation lc lb lf Kshape sbutton1 sc Ktexture ts kakao_color">
+            <h3 class="Kmargin Klocation lcc" align="center" style="color:white"><strong>발행하기</strong></h3>
+        </div>
+    <% end %>
+<% end %>

@@ -1,0 +1,16 @@
+.Klocation{
+	position: relative;
+	&.la{position: absolute; }
+	&.lf{position: fixed; }
+	&.lc{
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	&.lcc{
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&.lb{bottom:0px }
+	&.lmg{width: 100%; } &.lmgv{height: 100%; }
+}

@@ -1,0 +1,57 @@
+<%= form_for(member) do |f| %>
+  <% if member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+      <% member.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subname %>
+    <%= f.text_field :subname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :img %>
+    <%= f.text_field :img %>
+  </div>
+
+  <div class="field">
+    <%= f.label :desc %>
+    <%= f.text_area :desc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :favorite %>
+    <%= f.text_field :favorite %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hate %>
+    <%= f.text_field :hate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :wannabe %>
+    <%= f.text_field :wannabe %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday %>
+    <%= f.datetime_select :birthday %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

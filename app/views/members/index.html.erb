@@ -1,0 +1,57 @@
+<% if notice %><p id="notice" class="btn bgm-lightgreen waves-effect"><%= notice %></p><% end %>
+<% if user_signed_in? %>
+    <%= link_to current_user.name, nil, class: 'btn btn-info btn-no-bootstrap' %>
+<% end %>
+<% if is_admin? %>
+    <%= link_to 'Add New Member', new_member_path, class: 'btn bgm-indigo btn-no-bootstrap' %>
+<% end %>
+
+<h1>Members</h1>
+
+<div>
+    <div>
+
+        <% @members.each do |member| %>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bgm-gray Jsquare " style="padding: 0; border-bottom: 2px solid #e9e9e9">
+                    <img src="<%= member.img %>" alt="<%= '우리의 ' + member.subname %>" class="Klocation lmg lcc"/>
+
+                    <% if is_admin? %>
+                        <ul class="actions">
+                            <li class="dropdown _<%= member.id %>">
+                                <a class="dropdownToggle"  obj_id="<%= member.id %>" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="zmdi zmdi-more-vert"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><%= link_to 'Danger !', '#', class: 'bgm-red', style: 'color: #fff' %></li>
+                                    <li><%= link_to '멤버탈퇴', member, method: :delete, data: { confirm: '정말 삭제할꺼에요?' }, class: '' %></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    <% end %>
+                    <% if current_user == member || is_admin? %>
+                        <%= link_to edit_member_path(member), {class: 'btn bgm-lightgreen btn-float waves-effect'} do %>
+                            <i class="zmdi zmdi-edit"></i>
+                        <% end %>
+                    <% end %>
+                </div>
+                <div class="card-body card-padding">
+                    <p><b><%= member.subname %> (<%= member.name %>)</b></p>
+                    <p><b><%= member.roll %></b></p>
+                    <%= simple_format(member.desc, {}, sanitize: false) %>
+                    <hr>
+                    <p style="text-align: center; margin-bottom: -10px;">
+                        <td><%= link_to 'More..', member, style: 'font-weight: bold' %></td>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <% end %>
+
+    </div>
+</div>
+
+<br>
+

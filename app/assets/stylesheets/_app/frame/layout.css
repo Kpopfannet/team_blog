@@ -1,0 +1,26 @@
+/* application style */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    word-break: break-all;
+}
+a{
+	color:inherit;
+}
+p{
+	margin-bottom:5px;
+    word-break:break-all;
+}
+button{
+	background-color:rgba(0,0,0,0);
+	border:none;
+	color:black;
+}
+.boxing{ border: 1px solid #000000; }
+.btn-no-bootstrap {
+    border-radius: 3px;
+    background-image: none;
+    border: 0px;
+}

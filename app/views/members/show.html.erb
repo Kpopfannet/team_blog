@@ -1,0 +1,67 @@
+<% if notice %><p id="notice" class="btn bgm-lightgreen waves-effect"><%= notice %></p><% end %>
+<div style="padding: 20px 0">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- article cards of this member -->
+            <% if (user_signed_in? && (current_user == @member)) || is_admin? %>
+                <%= link_to member_new_article_path(member_id: @member.id), {class: 'btn bgm-orange btn-float waves-effect btn-sm', style: 'width: 40px; height: 40px; line-height: 39px !important; bottom: -20px; right: 20px;'} do %>
+                    <i class="zmdi zmdi-plus"></i>
+                <% end %>
+            <% end %>
+            <% @articles.all.each do |article| %>
+            <div class="card">
+                <% if article.photo %>
+                    <div class="card-header bgm-default" style="padding: 0; border-bottom: 2px solid #e9e9e9">
+                        <img src="" alt="" class="" style="width: 100%;"/>
+                    </div>
+                <% end %>
+                <div class="card-body card-padding">
+
+                    <% if (user_signed_in? && (current_user == @member)) || is_admin? %>
+                    <ul class="actions" style="text-align: right;">
+                        <li class="dropdown">
+                            <a data-toggle="dropdown">
+                                <i class="zmdi zmdi-more-vert"></i>
+                            </a>                          
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><%= link_to 'Danger !', '#', class: 'bgm-red', style: 'color: #fff' %></li>
+                                <li><%= link_to '고치기', edit_article_path %></li> 
+                                <li><%= link_to '삭제', article, method: :delete, data: { confirm: '정말 삭제할꺼에요?' }, class: "Jforce"%></li> 
+                            </ul>
+                        </li>
+                    </ul>
+                    <% end %>
+
+                    <p><%== article.content %></p>
+                </div>
+            </div>
+            <% end %>
+        </div>
+        <div class="col-md-4">
+            <!-- profile information card of this member -->
+            <div class="card">
+                <div class="card-header card-padding" style="padding-bottom: 1px;">
+                    <h3><b><%= @member.subname %> (<%= @member.name %>)</b></h3>
+                    <% if is_admin? %>
+                        <%= link_to edit_member_path(@member), {class: 'btn bgm-lightgreen btn-float waves-effect btn-sm', style: 'width: 40px; height: 40px; line-height: 39px !important; bottom: -30px'} do %>
+                            <i class="zmdi zmdi-edit"></i>
+                        <% end %>
+                    <% end %>
+                </div>
+                <hr>
+                <div class="card-body card-padding" style="padding-top: 10px;">
+                    <%= simple_format(@member.roll.capitalize, {style: 'font-weight: bold;'}, sanitize: false) %>
+                    <br>
+                    <%= simple_format(@member.desc, {style: 'line-height: 1.7em;'}, sanitize: false) %>
+                    <br>
+                    <p><strong>좋아하는 것:</strong> <%= @member.favorite %></p>
+                    <p><strong>싫어하는 것:</strong> <%= @member.hate %></p>
+                    <p><strong>되고싶은 것:</strong> <%= @member.wannabe %></p>
+                    <p><strong>귀 빠진 날:</strong> <%= @member.birthday.strftime('%F') %></p>
+
+                    <%= link_to 'Back', members_path %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

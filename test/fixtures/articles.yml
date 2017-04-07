@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member: one
+  category: one
+  templete: MyString
+  thumbnail: MyString
+  title: MyString
+  preview: MyText
+  photo: MyString
+
+two:
+  member: two
+  category: two
+  templete: MyString
+  thumbnail: MyString
+  title: MyString
+  preview: MyText
+  photo: MyString

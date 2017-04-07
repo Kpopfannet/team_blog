@@ -1,0 +1,37 @@
+.loading__icon {
+    background-color: white;
+    position: absolute;
+    top:0px;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    animation-duration: 1.5s;
+    animation-name: fadeout;
+    @keyframes fadeout {
+        from {
+            opacity: 1
+        }
+        to {
+            opacity: 0
+        }
+    }
+}
+.loading__element {
+  $duration: 200ms;
+  transform-origin: 50% 50%;
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) {
+      animation: shrink ($duration * 8) linear infinite;
+      animation-delay: ($duration * $i);
+    }
+  }
+}
+
+@keyframes shrink {
+  20% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}

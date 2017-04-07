@@ -1,0 +1,19 @@
+.note-editable{
+	padding: 15px 15px 15px 15px !important;
+}
+
+.note-editor{
+	overflow: visible;
+}
+
+a.dropdownToggle {
+    cursor: pointer !important;
+}
+
+body.sw-toggled #footer {
+	padding-left: 0px;
+}
+
+.note-popover{
+	display:none;
+}

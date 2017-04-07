@@ -1,17 +1,28 @@
-<%= form_for(blog) do |f| %>
-  <% if blog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
-
-      <ul>
-      <% blog.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for(blog, html: {multipart: "true", class: "Jwysiwyg"}) do |f| %>
+    <%= f.hidden_field :id, value: "#{@blog.id}"%>
+    <div class="row Kpadding Kmargin">
+        <div class="col-md-8 Kpadding" style="max-width:550px">
+            <div class="Ktexture ts Kmargin Jsquare">
+                <img class="Klocation lcc lm lmg Jt" src="<%=@blog.photo.url%>">
+                <div class="Klocation la lcc">
+                    <label for="blog_photo" class="btn btn-default btn-block waves-effect kakao_color">Choose Photo</label>
+                    <%= f.file_field :photo, class: "hidden Jpreview" %>
+                </div>
+            </div>
+        </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="row Kmargin">
+        <div class="col-md-8 Kpadding Ktexture ts" style="max-width:550px">
+            <%= f.text_area :content, class: "html-editor"%>
+            <script>$(".html-editor").summernote({})</script>   
+        </div>
+    </div>
+    <div class="row row-md-1"></div>
+    <div class="row row-md-1"></div>
+    <div class="row row-md-1"></div>
+    <button>
+        <div class="Kmargin mb Klocation lc lb lf Kshape sbutton1 sc Ktexture ts kakao_color">
+            <h3 class="Kmargin Klocation lcc" align="center" style="color:white"><strong>밥 등록</strong></h3>
+        </div>
+    </button>
 <% end %>

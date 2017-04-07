@@ -1,0 +1,72 @@
+/* side navigation style */
+.height-match_parent{
+    min-height: 100%;
+}
+
+.sideNav{
+    background-color: #fff !important;
+    width: 20%;
+    border-right: 1px solid #E5E5E5;
+    position: fixed;
+}
+
+#logo_container{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px;
+    border-bottom: 1px solid #e5e5e5;
+    float: none;
+}
+
+#logo{
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.menu-font{
+    color: #666666;
+    text-transform: uppercase;
+    font-family: 'Roboto', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.main-menu > li > a{
+    padding-left: 20px;
+}
+
+.hover-no_effect {
+    text-decoration: none !important;
+    background-color: #fff !important;
+}
+
+#nav-main {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.main-menu{
+    width: 100%;
+    padding-top: 10px;
+    /*padding-left: 20px;*/
+}
+
+.nav, .nav > li {
+    margin: 0;
+    line-height: normal;
+    background: #FFFFFF;
+}
+
+.nav {
+    position: relative;
+    /*left: 0;*/
+    /*display: block;*/
+    /*float: left;*/
+    margin: 0 10px 0 0;
+    list-style: none;
+}
+
+li.menu-list > a, li.menu-list > a:hover {
+    background: #fff !important;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: "Apple SD Gothic Neo", 나눔고딕, NanumGothic, "맑은 고딕", "Malgun Gothic", 돋움, dotum, 굴림, gulim, applegothic, sans-serif;
+}
